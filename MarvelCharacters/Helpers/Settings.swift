@@ -15,7 +15,8 @@ struct Settings {
     static let privateKey:String = "<REMOVED_MARVEL_PRIVATE_KEY>"
     static let ts = Date().timeIntervalSince1970.description
     static let hash = "\(ts)\(privateKey)\(publicKey)".md5()
-    static let characterRequestURL:String = "https://gateway.marvel.com/v1/public/characters?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
+    static let limit = 30
+    static let characterRequestURL:String = "https://gateway.marvel.com/v1/public/characters?ts=\(ts)&limit=\(limit)&apikey=\(publicKey)&hash=\(hash)&offset="
     
     
     static let darkColor = UIColor(named: "darkColor")

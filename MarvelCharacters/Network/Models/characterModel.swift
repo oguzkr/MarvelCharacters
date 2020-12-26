@@ -27,14 +27,14 @@ struct Result: Codable {
     let thumbnail: Thumbnail
     let resourceURI: String
     let comics, series: Comics
-    let stories: Stories
+    //let stories: Stories?
     let events: Comics
     let urls: [URLElement]
 
     enum CodingKeys: String, CodingKey {
         case id, name
         case resultDescription = "description"
-        case thumbnail, resourceURI, comics, series, stories, events, urls
+        case thumbnail, resourceURI, comics, series, events, urls
         //case modified
     }
 }
