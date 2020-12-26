@@ -14,9 +14,9 @@ class networkManager {
     var characters = [Result]()
     var url = Settings.characterRequestURL
     
-    func getCharacters(page: Int, completed: @escaping () -> ()){
+    func getCharacters(offset: Int, completed: @escaping () -> ()){
         SVProgressHUD.show()
-        AF.request("\(url)\(page)").responseData { response in
+        AF.request("\(url)\(offset)").responseData { response in
             switch response.result {
             case .failure(let error):
                 print("ERROR failure: \(error)")
