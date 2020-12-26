@@ -18,6 +18,9 @@
 		124FAAD22597791800872CC0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124FAAD12597791800872CC0 /* Settings.swift */; };
 		124FAADF2597843E00872CC0 /* requestGetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124FAADE2597843E00872CC0 /* requestGetCharacters.swift */; };
 		1280473225978CEB0075D903 /* characterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280473125978CEB0075D903 /* characterModel.swift */; };
+		128047562597CB520075D903 /* comicsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128047552597CB520075D903 /* comicsModel.swift */; };
+		128047592597CD650075D903 /* comicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128047582597CD650075D903 /* comicsTableViewCell.swift */; };
+		1280475C2597CE4F0075D903 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280475B2597CE4F0075D903 /* CharacterDetailViewController.swift */; };
 		3D4B310EFC08BFB572853941 /* Pods_MarvelCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E13C9D69A7588FDCCCEB2A /* Pods_MarvelCharacters.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		124FAAD12597791800872CC0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		124FAADE2597843E00872CC0 /* requestGetCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestGetCharacters.swift; sourceTree = "<group>"; };
 		1280473125978CEB0075D903 /* characterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = characterModel.swift; sourceTree = "<group>"; };
+		128047552597CB520075D903 /* comicsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comicsModel.swift; sourceTree = "<group>"; };
+		128047582597CD650075D903 /* comicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comicsTableViewCell.swift; sourceTree = "<group>"; };
+		1280475B2597CE4F0075D903 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		35E13C9D69A7588FDCCCEB2A /* Pods_MarvelCharacters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelCharacters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0F530C7393ED55E55C97FE /* Pods-MarvelCharacters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelCharacters.release.xcconfig"; path = "Target Support Files/Pods-MarvelCharacters/Pods-MarvelCharacters.release.xcconfig"; sourceTree = "<group>"; };
 		BDD7DC990F19EEF69B4FCE53 /* Pods-MarvelCharacters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelCharacters.debug.xcconfig"; path = "Target Support Files/Pods-MarvelCharacters/Pods-MarvelCharacters.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,7 +95,6 @@
 				124FAACA259778AB00872CC0 /* Delegates */,
 				124FAAC92597789E00872CC0 /* Helpers */,
 				124FAAC82597788600872CC0 /* Extensions */,
-				124FAAC12597787100872CC0 /* Info.plist */,
 				124FAAB92597787100872CC0 /* MarvelCharacters.xcdatamodeld */,
 			);
 			path = MarvelCharacters;
@@ -105,6 +110,7 @@
 		124FAAC92597789E00872CC0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				124FAAC12597787100872CC0 /* Info.plist */,
 				124FAACE259778FB00872CC0 /* MarvelRegular.ttf */,
 				124FAAD12597791800872CC0 /* Settings.swift */,
 				124FAABC2597787100872CC0 /* Assets.xcassets */,
@@ -124,6 +130,7 @@
 		124FAACB259778B400872CC0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				128047582597CD650075D903 /* comicsTableViewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -141,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				124FAAB42597787000872CC0 /* ViewController.swift */,
+				1280475B2597CE4F0075D903 /* CharacterDetailViewController.swift */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				1280473125978CEB0075D903 /* characterModel.swift */,
+				128047552597CB520075D903 /* comicsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,7 +305,10 @@
 				124FAABB2597787100872CC0 /* MarvelCharacters.xcdatamodeld in Sources */,
 				124FAAB52597787000872CC0 /* ViewController.swift in Sources */,
 				124FAADF2597843E00872CC0 /* requestGetCharacters.swift in Sources */,
+				128047562597CB520075D903 /* comicsModel.swift in Sources */,
 				124FAAB12597787000872CC0 /* AppDelegate.swift in Sources */,
+				1280475C2597CE4F0075D903 /* CharacterDetailViewController.swift in Sources */,
+				128047592597CD650075D903 /* comicsTableViewCell.swift in Sources */,
 				124FAAB32597787000872CC0 /* SceneDelegate.swift in Sources */,
 				124FAAD22597791800872CC0 /* Settings.swift in Sources */,
 				1280473225978CEB0075D903 /* characterModel.swift in Sources */,
@@ -449,7 +461,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7WG386WRN;
-				INFOPLIST_FILE = MarvelCharacters/Info.plist;
+				INFOPLIST_FILE = MarvelCharacters/Helpers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,7 +481,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7WG386WRN;
-				INFOPLIST_FILE = MarvelCharacters/Info.plist;
+				INFOPLIST_FILE = MarvelCharacters/Helpers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

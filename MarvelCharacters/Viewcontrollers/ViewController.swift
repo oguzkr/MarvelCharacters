@@ -15,19 +15,26 @@ class ViewController: UIViewController {
     
     var network: networkManager = networkManager()
     var characters = [Result]()
+    
     var scrollcontrol = true
-    var offSet = 1
+    var offSet = 0
     let margin: CGFloat = 10
+    
+    //VARAIBLES FOR DETAIL SCREEN
+    var charName = String()
+    var charImageURL = String()
+    var charDesc = String()
+    var charComics = [String]()
+    
 
-    var charURL = String()
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectioView()
-        network.getCharacters(page: 1) {
+        network.getCharacters(offset: 0) {
             self.characters = self.network.characters
             self.collectionView.reloadData()
         }
@@ -44,11 +51,22 @@ class ViewController: UIViewController {
 
     
     func insertNextPage(){
-        offSet += 1
-        network.getCharacters(page: offSet) {
+        offSet += 30
+        network.getCharacters(offset: offSet) {
+            print("Inserted between \(self.offSet) - \(self.offSet+30)")
             self.characters += self.network.characters
             self.collectionView.reloadData()
             self.scrollcontrol = true
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showHeroDetail" {
+            let detailVC = segue.destination as! CharacterDetailViewController
+            detailVC.charName = charName
+            detailVC.charImageURL = charImageURL
+            detailVC.charDesc = charDesc
+            detailVC.charComics = charComics
         }
     }
 }
@@ -71,9 +89,22 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        charURL = self.characters[indexPath.row].thumbnail.path + "." + self.characters[indexPath.row].thumbnail.thumbnailExtension.rawValue
+        charImageURL = self.characters[indexPath.row].thumbnail.path + "." + self.characters[indexPath.row].thumbnail.thumbnailExtension.rawValue
+
+        charName = self.characters[indexPath.row].name
+        charDesc = self.characters[indexPath.row].resultDescription ?? "NO DESC"
+        for comics in self.characters[indexPath.row].comics.items {
+            charComics.append(comics.name)
+            
+            print("Appended \(comics.name)")
+        }
+    
+   
+        
+        performSegue(withIdentifier: "showHeroDetail", sender: self)
 
     }
+    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
