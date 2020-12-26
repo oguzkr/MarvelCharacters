@@ -13,10 +13,10 @@ class networkManager {
     
     var characters = [Result]()
     var url = Settings.characterRequestURL
-
-    func getCharacters(completed: @escaping () -> ()){
+    
+    func getCharacters(page: Int, completed: @escaping () -> ()){
         SVProgressHUD.show()
-        AF.request(url).responseData { response in
+        AF.request("\(url)\(page)").responseData { response in
             switch response.result {
             case .failure(let error):
                 print("ERROR failure: \(error)")
@@ -26,11 +26,11 @@ class networkManager {
                     self.characters = characterData.data.results
                     DispatchQueue.main.async {
                         SVProgressHUD.dismiss()
+                        print(self.url)
                         completed()
                     }
                 } catch let error {
                     print("ERROR: \(error)")
-                    print(self.url)
                     SVProgressHUD.dismiss()
                 }
             }

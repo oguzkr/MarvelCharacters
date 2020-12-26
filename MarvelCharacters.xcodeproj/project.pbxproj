@@ -89,7 +89,6 @@
 				124FAACA259778AB00872CC0 /* Delegates */,
 				124FAAC92597789E00872CC0 /* Helpers */,
 				124FAAC82597788600872CC0 /* Extensions */,
-				124FAABE2597787100872CC0 /* LaunchScreen.storyboard */,
 				124FAAC12597787100872CC0 /* Info.plist */,
 				124FAAB92597787100872CC0 /* MarvelCharacters.xcdatamodeld */,
 			);
@@ -133,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				124FAAB62597787000872CC0 /* Main.storyboard */,
+				124FAABE2597787100872CC0 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
