@@ -11,30 +11,30 @@ import SVProgressHUD
 
 class networkManager {
     
-    //var rovers = [Photos]()
-   // var url = Settings.PUBLIC_API_KEY
+    var characters = [Result]()
+    var url = Settings.characterRequestURL
 
-//    func getRoverData(tab:Int, page:Int, completed: @escaping () -> ()){
-//        SVProgressHUD.show()
-//        
-//        AF.request(url).responseData { response in
-//            switch response.result {
-//            case .failure(let error):
-//                print(error)
-//            case .success(let data):
-//                do {
-//                    let roverData = try JSONDecoder().decode(Rovers.self, from: data)
-//                    self.rovers = roverData.photos
-//                    DispatchQueue.main.async {
-//                        SVProgressHUD.dismiss()
-//                        completed()
-//                    }
-//                } catch let error {
-//                    print(error)
-//                    SVProgressHUD.dismiss()
-//                }
-//            }
-//        }.resume()
-//    }
+    func getCharacters(completed: @escaping () -> ()){
+        SVProgressHUD.show()
+        AF.request(url).responseData { response in
+            switch response.result {
+            case .failure(let error):
+                print("ERROR failure: \(error)")
+            case .success(let data):
+                do {
+                    let characterData = try JSONDecoder().decode(Characters.self, from: data)
+                    self.characters = characterData.data.results
+                    DispatchQueue.main.async {
+                        SVProgressHUD.dismiss()
+                        completed()
+                    }
+                } catch let error {
+                    print("ERROR: \(error)")
+                    print(self.url)
+                    SVProgressHUD.dismiss()
+                }
+            }
+        }.resume()
+    }
     
 }
