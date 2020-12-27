@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     var charName = String()
     var charImageURL = String()
     var charDesc = String()
-    var charComics = [String]()
+    var charComics = [SelectedHeroComicResult]()
     
 
     
@@ -90,19 +90,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         charImageURL = self.characters[indexPath.row].thumbnail.path + "." + self.characters[indexPath.row].thumbnail.thumbnailExtension.rawValue
-
         charName = self.characters[indexPath.row].name
         charDesc = self.characters[indexPath.row].resultDescription ?? "NO DESC"
-        for comics in self.characters[indexPath.row].comics.items {
-            charComics.append(comics.name)
-            
-            print("Appended \(comics.name)")
+        network.getComicsOfCharacter(characterID: self.characters[indexPath.row].id) {
+            self.charComics = self.network.selectedCharComics
         }
-    
-   
-        
         performSegue(withIdentifier: "showHeroDetail", sender: self)
-
     }
     
     
