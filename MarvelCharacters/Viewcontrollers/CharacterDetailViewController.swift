@@ -17,15 +17,12 @@ class CharacterDetailViewController: UIViewController {
     var charName = String()
     var charImageURL = String()
     var charDesc = String()
-    var charComics = [String]()
+    var charComics = [SelectedHeroComicResult]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         setHeroData()
-        print("*** Character Name: \(charName) ***")
-        print("*** Character Desc: \(charDesc) ***")
-        print("*** Character Comics: \(charComics) ***")
     }
     
     func setTableView(){
@@ -39,7 +36,7 @@ class CharacterDetailViewController: UIViewController {
         imageViewChar.sd_setImage(with: url, placeholderImage: UIImage.gif(asset: "load.gif"))
         
         if charComics.count == 0 {
-            labelHeader.text = "\(charName) has no comics"
+            labelHeader.text = "\(charName) has no comics".uppercased()
         }
         
         if charDesc == "" {
@@ -67,7 +64,7 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "comicsCell", for: indexPath) as! comicsTableViewCell
 
-        cell.labelComicsTitle.text = charComics[indexPath.row]
+        cell.labelComicsTitle.text = charComics[indexPath.row].title
         
         return cell
     }

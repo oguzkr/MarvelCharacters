@@ -19,6 +19,15 @@ struct Settings {
     static let characterRequestURL:String = "https://gateway.marvel.com/v1/public/characters?ts=\(ts)&limit=\(limit)&apikey=\(publicKey)&hash=\(hash)&offset="
     
     
+    
+    static let characterComicsBaseURL:String = "https://gateway.marvel.com:443/v1/public/characters/" //+charID
+    static let characterComicsSpesifications:String = "/comics?format=comic&formatType=comic&orderBy=-onsaleDate&limit=10&ts=\(ts)&limit=\(limit)&apikey=\(publicKey)&hash=\(hash)&dateRange=2005-01-01%2C" //+todays date
+    
+
+    
+
+    
+    
     static let darkColor = UIColor(named: "darkColor")
     static let marvelRedColor = UIColor(named: "marvelRedColor")
     static let marvelRedLightColor = UIColor(named: "marvelRedLightColor")

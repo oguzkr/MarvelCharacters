@@ -9,13 +9,14 @@ import Foundation
 
 // MARK: - Comics
 struct SelectedHeroComics: Codable {
-    let data: DataClass
+    let data: SelectedHeroComicDataClass
 }
 
 // MARK: - DataClass
 struct SelectedHeroComicDataClass: Codable {
     let results: [SelectedHeroComicResult]
 }
+
 
 // MARK: - Result
 struct SelectedHeroComicResult: Codable {
