@@ -40,7 +40,7 @@ class CharacterDetailViewController: UIViewController {
         if charComics.count == 0 {
             labelHeader.text = "\(charName) has no comics".uppercased()
         }
-        
+        //set desc label depend on how mony comics character has
         if charDesc == "" {
             textViewChar.text = "No descriptoion for \(charName)"
         } else {
