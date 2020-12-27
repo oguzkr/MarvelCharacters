@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xnK-sX-czb">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <color key="backgroundColor" name="darkColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kk8-MT-ABz">
                                     <size key="itemSize" width="128" height="128"/>
@@ -66,14 +65,89 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="l3S-Nt-hXX"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzM-Sa-Acd">
+                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_topbar" translatesAutoresizingMaskIntoConstraints="NO" id="Og1-Sz-Hnt">
+                                        <rect key="frame" x="240" y="0.0" width="120" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="Vig-U8-rfy"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CASE - MARVEL HEROES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umh-Vd-vBE">
+                                        <rect key="frame" x="5" y="37" width="213" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="8bh-uJ-oQx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="23"/>
+                                        <color key="textColor" name="marvelRedLightColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWf-sm-OTE">
+                                        <rect key="frame" x="223" y="0.0" width="2" height="70"/>
+                                        <color key="backgroundColor" name="marvelRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="2" id="Lr4-dD-jlO"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OGUZ KARATORUK - PATH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejW-H9-hnY">
+                                        <rect key="frame" x="5" y="5" width="213" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="w15-hO-L2j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="23"/>
+                                        <color key="textColor" name="marvelRedLightColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1as-ml-UUe">
+                                        <rect key="frame" x="0.0" y="68" width="375" height="2"/>
+                                        <color key="backgroundColor" name="marvelRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="hk4-sO-RHM"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVg-iN-tsY">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
+                                        <color key="backgroundColor" name="marvelRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="yOu-2U-WkK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="darkColor"/>
+                                <constraints>
+                                    <constraint firstItem="AWf-sm-OTE" firstAttribute="top" secondItem="IzM-Sa-Acd" secondAttribute="top" id="1mM-RE-0gf"/>
+                                    <constraint firstItem="Og1-Sz-Hnt" firstAttribute="top" secondItem="IzM-Sa-Acd" secondAttribute="top" id="2ZH-2p-GZD"/>
+                                    <constraint firstItem="ejW-H9-hnY" firstAttribute="top" secondItem="IzM-Sa-Acd" secondAttribute="top" constant="5" id="6dH-p5-38I"/>
+                                    <constraint firstItem="umh-Vd-vBE" firstAttribute="leading" secondItem="IzM-Sa-Acd" secondAttribute="leading" constant="5" id="7fF-5b-ay2"/>
+                                    <constraint firstAttribute="bottom" secondItem="AWf-sm-OTE" secondAttribute="bottom" id="7y1-ly-ZQM"/>
+                                    <constraint firstItem="Og1-Sz-Hnt" firstAttribute="leading" secondItem="AWf-sm-OTE" secondAttribute="trailing" constant="15" id="DsN-on-knw"/>
+                                    <constraint firstItem="umh-Vd-vBE" firstAttribute="top" secondItem="ejW-H9-hnY" secondAttribute="bottom" constant="2" id="GKc-kb-KZl"/>
+                                    <constraint firstItem="AWf-sm-OTE" firstAttribute="leading" secondItem="umh-Vd-vBE" secondAttribute="trailing" constant="5" id="Hns-YY-lSR"/>
+                                    <constraint firstItem="sVg-iN-tsY" firstAttribute="leading" secondItem="IzM-Sa-Acd" secondAttribute="leading" id="JO0-eE-6b9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Og1-Sz-Hnt" secondAttribute="trailing" constant="15" id="Nnv-kD-bLq"/>
+                                    <constraint firstItem="1as-ml-UUe" firstAttribute="leading" secondItem="IzM-Sa-Acd" secondAttribute="leading" id="NuJ-bb-lUo"/>
+                                    <constraint firstAttribute="trailing" secondItem="1as-ml-UUe" secondAttribute="trailing" id="OCT-ld-e1L"/>
+                                    <constraint firstAttribute="bottom" secondItem="Og1-Sz-Hnt" secondAttribute="bottom" id="Vjg-ir-yla"/>
+                                    <constraint firstAttribute="height" constant="70" id="dA8-vh-IPW"/>
+                                    <constraint firstItem="sVg-iN-tsY" firstAttribute="top" secondItem="IzM-Sa-Acd" secondAttribute="top" id="k6H-l6-0x6"/>
+                                    <constraint firstItem="ejW-H9-hnY" firstAttribute="leading" secondItem="IzM-Sa-Acd" secondAttribute="leading" constant="5" id="kv6-xP-XSa"/>
+                                    <constraint firstAttribute="trailing" secondItem="sVg-iN-tsY" secondAttribute="trailing" id="ky9-lU-dBi"/>
+                                    <constraint firstItem="AWf-sm-OTE" firstAttribute="leading" secondItem="ejW-H9-hnY" secondAttribute="trailing" constant="5" id="yyf-CX-0Dd"/>
+                                    <constraint firstAttribute="bottom" secondItem="1as-ml-UUe" secondAttribute="bottom" id="zIv-0I-B0c"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="darkColor"/>
                         <constraints>
-                            <constraint firstItem="xnK-sX-czb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FlO-fx-TSF"/>
-                            <constraint firstItem="xnK-sX-czb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="It1-ar-Fbh"/>
-                            <constraint firstItem="xnK-sX-czb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dUa-Dg-lOF"/>
-                            <constraint firstItem="xnK-sX-czb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kC5-HD-rvH"/>
+                            <constraint firstItem="xnK-sX-czb" firstAttribute="top" secondItem="IzM-Sa-Acd" secondAttribute="bottom" id="CZK-Ie-6mX"/>
+                            <constraint firstItem="xnK-sX-czb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JOL-x3-jy3"/>
+                            <constraint firstItem="IzM-Sa-Acd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q43-co-ZYw"/>
+                            <constraint firstItem="IzM-Sa-Acd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hLq-co-iMg"/>
+                            <constraint firstItem="xnK-sX-czb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lPw-Yj-6Vb"/>
+                            <constraint firstItem="IzM-Sa-Acd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lvf-is-XYp"/>
+                            <constraint firstItem="xnK-sX-czb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mIX-Ij-IPx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Marvel Characters" id="q6e-PT-Aq2"/>
@@ -84,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="33"/>
+            <point key="canvasLocation" x="788" y="32.833583208395808"/>
         </scene>
         <!--Character Name-->
         <scene sceneID="i8c-xA-6kv">
@@ -212,11 +286,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_topbar" width="2000" height="945"/>
         <namedColor name="darkColor">
             <color red="0.17299999296665192" green="0.17499999701976776" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="marvelRedColor">
+            <color red="0.92900002002716064" green="0.11400000005960464" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="marvelRedLightColor">
+            <color red="0.92900002002716064" green="0.11400000005960464" blue="0.14100000262260437" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

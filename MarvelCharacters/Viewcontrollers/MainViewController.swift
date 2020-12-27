@@ -40,6 +40,18 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: CONTROL NAVBAR VISIBILITY
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    //MARK: FUNCTIONS FOR CUSTOMIZE COLLECTIONVIEW
     func setCollectioView() {
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -59,6 +71,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: SEGUE CUSTOMIZATIONS
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showHeroDetail" {
             let detailVC = segue.destination as! CharacterDetailViewController
@@ -77,7 +90,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
-        if offsetY > contentHeight - scrollView.frame.height + 30  && scrollcontrol == true{
+        if offsetY > contentHeight - scrollView.frame.height + 30 && scrollcontrol == true {
             if self.characters.count >= 30 {
                 scrollcontrol = false
                 insertNextPage()
@@ -94,8 +107,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             self.performSegue(withIdentifier: "showHeroDetail", sender: self)
         }
     }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characters.count
