@@ -31,10 +31,12 @@ class CharacterDetailViewController: UIViewController {
     }
     
     func setHeroData(){
+        //set navigation title to character name
         self.navigationItem.title = charName
+        //set image
         let url = URL(string: charImageURL)
         imageViewChar.sd_setImage(with: url, placeholderImage: UIImage.gif(asset: "load.gif"))
-        
+        //set comics label
         if charComics.count == 0 {
             labelHeader.text = "\(charName) has no comics".uppercased()
         }
@@ -52,6 +54,7 @@ class CharacterDetailViewController: UIViewController {
 }
 
 extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return charComics.count
     }
