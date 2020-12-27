@@ -14,22 +14,22 @@ import SVProgressHUD
 class ViewController: UIViewController {
     
     var network: networkManager = networkManager()
-    var characters = [Result]()
     
+    //data array
+    var characters = [Result]()
+    var charComics = [SelectedHeroComicResult]()
+
+    //configurations for collectionview
     var scrollcontrol = true
     var offSet = 0
     let margin: CGFloat = 10
     
-    //VARAIBLES FOR DETAIL SCREEN
+    //varaibles for detail screen
     var charName = String()
     var charImageURL = String()
     var charDesc = String()
-    var charComics = [SelectedHeroComicResult]()
-    
-
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,6 @@ class ViewController: UIViewController {
            flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
     }
 
-    
     func insertNextPage(){
         offSet += 30
         network.getCharacters(offset: offSet) {
@@ -69,12 +68,10 @@ class ViewController: UIViewController {
             detailVC.charComics = charComics
         }
     }
+    
 }
 
-
-
-
-//MARK: EXTENSIONS
+//MARK: EXTENSIONS FOR COLLECTIONVIEW
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -94,8 +91,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         charDesc = self.characters[indexPath.row].resultDescription ?? "NO DESC"
         network.getComicsOfCharacter(characterID: self.characters[indexPath.row].id) {
             self.charComics = self.network.selectedCharComics
+            self.performSegue(withIdentifier: "showHeroDetail", sender: self)
         }
-        performSegue(withIdentifier: "showHeroDetail", sender: self)
     }
     
     
@@ -114,8 +111,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let image : UIImageView = cell.contentView.viewWithTag(1) as! UIImageView
         
         charname.text = self.characters[indexPath.row].name.uppercased()
+        
         let url = URL(string: "\(self.characters[indexPath.row].thumbnail.path + "." + self.characters[indexPath.row].thumbnail.thumbnailExtension.rawValue)")
         image.sd_setImage(with: url, placeholderImage: UIImage.gif(asset: "load.gif"))
+        
         return cell
     }
 

@@ -13,7 +13,7 @@ class networkManager {
     
     var characters = [Result]()
     var selectedCharComics = [SelectedHeroComicResult]()
-
+    
     var getCharListUrl = Settings.characterRequestURL
 
     func getCharacters(offset: Int, completed: @escaping () -> ()){
@@ -41,7 +41,6 @@ class networkManager {
     func getComicsOfCharacter(characterID:Int, completed: @escaping () -> ()){
         SVProgressHUD.show()
         let requestURL = "\(Settings.characterComicsBaseURL)\(characterID)\(Settings.characterComicsSpesifications)\(todaysDate())"
-        
         AF.request(requestURL).responseData { response in
             switch response.result {
             case .failure(let error):
@@ -62,7 +61,7 @@ class networkManager {
         }.resume()
     }
     
-    func todaysDate()->String{
+    func todaysDate()->String{ //get comics to today from 2005
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"

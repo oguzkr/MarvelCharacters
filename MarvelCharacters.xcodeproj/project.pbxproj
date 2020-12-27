@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123A51D02598D6EC0046E2FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 123A51CF2598D6EC0046E2FE /* GoogleService-Info.plist */; };
 		124FAAB12597787000872CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124FAAB02597787000872CC0 /* AppDelegate.swift */; };
 		124FAAB32597787000872CC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124FAAB22597787000872CC0 /* SceneDelegate.swift */; };
 		124FAAB52597787000872CC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124FAAB42597787000872CC0 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		123A51CF2598D6EC0046E2FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		124FAAAD2597787000872CC0 /* MarvelCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		124FAAB02597787000872CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		124FAAB22597787000872CC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				124FAAC12597787100872CC0 /* Info.plist */,
+				123A51CF2598D6EC0046E2FE /* GoogleService-Info.plist */,
 				124FAACE259778FB00872CC0 /* MarvelRegular.ttf */,
 				124FAAD12597791800872CC0 /* Settings.swift */,
 				124FAABC2597787100872CC0 /* Assets.xcassets */,
@@ -248,6 +251,7 @@
 			files = (
 				124FAAC02597787100872CC0 /* LaunchScreen.storyboard in Resources */,
 				124FAACF259778FB00872CC0 /* MarvelRegular.ttf in Resources */,
+				123A51D02598D6EC0046E2FE /* GoogleService-Info.plist in Resources */,
 				124FAABD2597787100872CC0 /* Assets.xcassets in Resources */,
 				124FAAB82597787000872CC0 /* Main.storyboard in Resources */,
 			);
@@ -469,7 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oguzkr.MarvelCharacters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -489,7 +493,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oguzkr.MarvelCharacters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

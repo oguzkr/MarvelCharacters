@@ -11,5 +11,5 @@ pod 'SDWebImage', '~> 5.0'
 pod 'SVProgressHUD'
 pod 'Alamofire', '~> 5.2'
 pod 'CryptoSwift', '~> 1.3.8'
-
+pod 'Firebase/Analytics'
 end

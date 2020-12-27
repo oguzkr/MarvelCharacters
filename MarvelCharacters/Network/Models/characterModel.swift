@@ -23,11 +23,9 @@ struct Result: Codable {
     let id: Int
     let name: String
     let resultDescription: String?
-    //let modified: Date
     let thumbnail: Thumbnail
     let resourceURI: String
     let comics, series: Comics
-    //let stories: Stories?
     let events: Comics
     let urls: [URLElement]
 
@@ -35,7 +33,6 @@ struct Result: Codable {
         case id, name
         case resultDescription = "description"
         case thumbnail, resourceURI, comics, series, events, urls
-        //case modified
     }
 }
 

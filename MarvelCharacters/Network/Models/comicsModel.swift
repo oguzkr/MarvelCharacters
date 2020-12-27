@@ -17,7 +17,6 @@ struct SelectedHeroComicDataClass: Codable {
     let results: [SelectedHeroComicResult]
 }
 
-
 // MARK: - Result
 struct SelectedHeroComicResult: Codable {
     let title: String
